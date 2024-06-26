@@ -67,3 +67,22 @@ export const generatePagination = (currentPage: number, totalPages: number) => {
     totalPages,
   ];
 };
+
+export function objectToFormData(obj: Record<string, any>): FormData {
+  const formData = new FormData();
+
+  Object.keys(obj).forEach((key) => {
+    const value = obj[key];
+
+    // If the value is an array, append each item individually
+    if (Array.isArray(value)) {
+      value.forEach((item, index) => {
+        formData.append(`${key}[${index}]`, item);
+      });
+    } else {
+      formData.append(key, value);
+    }
+  });
+
+  return formData;
+}
