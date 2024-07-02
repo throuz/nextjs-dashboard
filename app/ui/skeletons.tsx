@@ -244,3 +244,11 @@ export function InvoicesSkeleton() {
     </>
   );
 }
+
+export function CustomersSkeleton() {
+  return (
+    <div
+      className={`${shimmer} relative mb-4 h-8 w-36 overflow-hidden rounded-md bg-gray-100`}
+    />
+  );
+}
