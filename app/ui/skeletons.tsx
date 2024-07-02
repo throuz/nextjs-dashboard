@@ -216,3 +216,31 @@ export function InvoicesTableSkeleton() {
     </div>
   );
 }
+
+export function InvoicesSkeleton() {
+  return (
+    <>
+      <div
+        className={`${shimmer} relative mb-4 h-8 w-36 overflow-hidden rounded-md bg-gray-100`}
+      />
+      <div className="mt-4 flex animate-pulse items-center justify-between gap-2 md:mt-8">
+        <div className="relative flex flex-1 flex-shrink-0">
+          <div className="block h-10 w-full rounded bg-gray-100"></div>
+        </div>
+        <div className="h-10 w-1/4 rounded bg-gray-100"></div>
+      </div>
+      <InvoicesTableSkeleton />
+      <div className="mt-5 flex w-full animate-pulse justify-center">
+        <div className="inline-flex">
+          <div className="pointer-events-none mr-2 flex h-10 w-10 items-center justify-center rounded-md border bg-gray-100 text-gray-300 md:mr-4"></div>
+          <div className="flex -space-x-px">
+            <div className="flex h-10 w-10 items-center justify-center rounded-l-md border bg-gray-100 text-sm"></div>
+            <div className="flex h-10 w-10 items-center justify-center border bg-gray-100 text-sm"></div>
+            <div className="flex h-10 w-10 items-center justify-center rounded-r-md border bg-gray-100 text-sm"></div>
+          </div>
+          <div className="ml-2 flex h-10 w-10 items-center justify-center rounded-md bg-gray-100 md:ml-4"></div>
+        </div>
+      </div>
+    </>
+  );
+}
