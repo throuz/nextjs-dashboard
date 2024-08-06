@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { ActionStatus } from '@/app/lib/actions/definitions';
 import { CreateInvoicesParams } from '@/app/lib/actions/invoices/createInvoice';
 import { updateInvoice } from '@/app/lib/actions/invoices/updateInvoice';
@@ -42,6 +43,7 @@ export default function EditInvoiceForm({
 
   async function onSubmit(data: CreateInvoicesParams) {
     const response = await updateInvoice(invoice.id, data);
+    toast(response.message);
     if (response.status === ActionStatus.Success) {
       router.push('/dashboard/invoices');
     }

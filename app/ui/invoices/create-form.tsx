@@ -1,6 +1,7 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import { ActionStatus } from '@/app/lib/actions/definitions';
 import {
   createInvoice,
@@ -38,6 +39,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
 
   async function onSubmit(data: CreateInvoicesParams) {
     const response = await createInvoice(data);
+    toast(response.message);
     if (response.status === ActionStatus.Success) {
       router.push('/dashboard/invoices');
     }
