@@ -4,7 +4,7 @@ import { AuthError } from 'next-auth';
 import { z } from 'zod';
 import { objectToFormData } from '@/app/lib/utils';
 import { signIn } from '@/auth';
-import { ActionStatus, ActionResponse } from '../definitions';
+import { ActionStatus, ActionResponse } from '../../definitions';
 import { authenticateSchema } from './schema';
 
 export type AuthenticateParams = z.infer<typeof authenticateSchema>;

@@ -1,12 +1,12 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
+import { ActionStatus } from '@/app/lib/actions/definitions';
 import {
   authenticate,
   AuthenticateParams,
-} from '@/app/lib/actions/authenticate/authenticate';
-import { authenticateSchema } from '@/app/lib/actions/authenticate/schema';
-import { ActionStatus } from '@/app/lib/actions/definitions';
+} from '@/app/lib/actions/login/authenticate';
+import { authenticateSchema } from '@/app/lib/actions/login/authenticate/schema';
 import { lusitana } from '@/app/ui/fonts';
 import { ArrowRightIcon } from '@heroicons/react/20/solid';
 import {
