@@ -31,7 +31,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
   } = useForm<CreateInvoicesParams>({
     resolver: zodResolver(createInvoicesSchema),
     defaultValues: {
-      customerId: '',
+      customerId: null as unknown as string,
       amount: null as unknown as number,
       status: null as unknown as 'pending' | 'paid',
     },
