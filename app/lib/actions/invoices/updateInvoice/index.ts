@@ -30,7 +30,7 @@ export async function updateInvoice(
     if (error instanceof z.ZodError) {
       return {
         status: ActionStatus.Error,
-        message: 'Invalid email or password',
+        message: 'Invalid input data for updating invoice.',
       };
     }
     return {

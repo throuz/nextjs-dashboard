@@ -29,7 +29,7 @@ export async function createInvoice(
     if (error instanceof z.ZodError) {
       return {
         status: ActionStatus.Error,
-        message: 'Invalid email or password',
+        message: 'Invalid input data for creating invoice.',
       };
     }
     return {
